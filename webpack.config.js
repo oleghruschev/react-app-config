@@ -16,10 +16,10 @@ module.exports = {
 	
 	entry: './src/index.js',
 
-	output: {
-		filename: 'bundle.js',
-		path: path.resolve(__dirname, 'build'),
-		publicPath: '/'
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'build'),
+    publicPath: '/'
   },
   
   resolve: {
@@ -55,23 +55,23 @@ module.exports = {
             }
           },
           {
-						loader: 'sass-loader',
-						options: { sourceMap: true },
-					}
+            loader: 'sass-loader',
+            options: { sourceMap: true },
+          }
       	]
       },
       //загрузка изображений
 			{
 				test: /\.(png|gif|jpe?g)$/,
 				loaders: [
-					{
-						loader: 'file-loader',
-						options: {
-							name: 'images/[name].[ext]',
-						}
-					},
-					'img-loader',
-				]
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'images/[name].[ext]',
+            }
+          },
+          'img-loader',
+        ]
 			},
     ]
   },
@@ -81,8 +81,8 @@ module.exports = {
   },
 
   plugins: [
-  	HtmlPlugin,
-  	MiniCssPlugin,
+    HtmlPlugin,
+    MiniCssPlugin,
     HotModulePlugin,
   ],
 }
