@@ -1,5 +1,5 @@
-const webpack = require('webpack');
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebPackPlugin = require ('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -13,15 +13,20 @@ const HotModulePlugin = new webpack.HotModuleReplacementPlugin();
 
 
 module.exports = {
-	// context: path.resolve(__dirname, 'src'),
-
+	
 	entry: './src/index.js',
 
 	output: {
 		filename: 'bundle.js',
 		path: path.resolve(__dirname, 'build'),
 		publicPath: '/'
-	},
+  },
+  
+  resolve: {
+    alias: {
+      images: path.resolve('./static/images'),
+    }
+  },
 	//Настройки локального сервера
 	devServer: {
     contentBase: './build',
