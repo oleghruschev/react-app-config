@@ -24,10 +24,15 @@ module.exports = {
   resolve: {
     alias: {
       images: path.resolve(__dirname, 'static/images'),
-    }
+      scss: path.resolve(__dirname, 'src/scss'),
+    },
+    extensions: [
+      '.js',
+      '.scss',
+    ],
   },
-    //Настройки локального сервера
-    devServer: {
+  //Настройки локального сервера
+  devServer: {
     contentBase: './build',
     hot: true
   },
@@ -42,7 +47,7 @@ module.exports = {
       {
       	test: /\.scss$/,
       	use: [
-      	  MiniCssExtractPlugin.loader,
+          MiniCssExtractPlugin.loader,
           {
             loader: "css-loader",
             options: {
@@ -59,17 +64,15 @@ module.exports = {
           }
       	]
       },
-      //загрузка изображений
       {
         test: /\.(png|gif|jpe?g)$/,
-	loaders: [
+	      loaders: [
           {
             loader: 'file-loader',
             options: {
               name: 'images/[name].[ext]',
-            }
-          },
-          'img-loader',
+            },
+          }
         ]
       },
     ]
