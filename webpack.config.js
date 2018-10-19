@@ -11,7 +11,6 @@ const MiniCssPlugin = new MiniCssExtractPlugin({
 });
 const HotModulePlugin = new webpack.HotModuleReplacementPlugin();
 
-console.log(path.resolve(__dirname, 'static/images'))
 module.exports = {
 	
   entry: './src/index.js',
@@ -25,14 +24,7 @@ module.exports = {
   resolve: {
     alias: {
       images: path.resolve(__dirname, 'static/images'),
-    },
-    extensions: [
-      '.js',
-      '.scss',
-    ],
-    modules: [
-      'node_modules'
-    ],
+    }
   },
     //Настройки локального сервера
     devServer: {
