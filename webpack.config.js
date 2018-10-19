@@ -13,7 +13,7 @@ const HotModulePlugin = new webpack.HotModuleReplacementPlugin();
 
 module.exports = {
 	
-  entry: './src/index.js',
+  entry: './src/client/index.js',
 
   output: {
     filename: 'bundle.js',
@@ -51,11 +51,9 @@ module.exports = {
           {
             loader: "css-loader",
             options: {
-              // modules: true,
-              // importLoaders: 1,
-              // localIdentName: "[name]_[local]_[hash:base64]",
-              sourceMap: true
-              // minimize: true
+              importLoaders: 1,
+              modules: true,
+              localIdentName: "[name]__[local]___[hash:base64:5]"
             }
           },
           {
