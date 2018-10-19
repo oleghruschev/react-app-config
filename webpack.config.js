@@ -24,7 +24,7 @@ module.exports = {
   resolve: {
     alias: {
       images: path.resolve(__dirname, 'static/images'),
-      scss: path.resolve(__dirname, 'src/scss'),
+      vars: path.resolve(__dirname, 'src/scss/_vars'),
     },
     extensions: [
       '.js',
