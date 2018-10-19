@@ -7,14 +7,14 @@ const HtmlPlugin = new HtmlWebPackPlugin ({
   template: './index.html'
 });
 const MiniCssPlugin = new MiniCssExtractPlugin({
-	filename: './style.css',
+  filename: './style.css',
 });
 const HotModulePlugin = new webpack.HotModuleReplacementPlugin();
 
 console.log(path.resolve(__dirname, 'static/images'))
 module.exports = {
 	
-	entry: './src/index.js',
+  entry: './src/index.js',
 
   output: {
     filename: 'bundle.js',
@@ -34,13 +34,13 @@ module.exports = {
       'node_modules'
     ],
   },
-	//Настройки локального сервера
-	devServer: {
+    //Настройки локального сервера
+    devServer: {
     contentBase: './build',
     hot: true
   },
 
-	module: {
+  module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
@@ -50,7 +50,7 @@ module.exports = {
       {
       	test: /\.scss$/,
       	use: [
-      		MiniCssExtractPlugin.loader,
+      	  MiniCssExtractPlugin.loader,
           {
             loader: "css-loader",
             options: {
@@ -68,9 +68,9 @@ module.exports = {
       	]
       },
       //загрузка изображений
-			{
-				test: /\.(png|gif|jpe?g)$/,
-				loaders: [
+      {
+        test: /\.(png|gif|jpe?g)$/,
+	loaders: [
           {
             loader: 'file-loader',
             options: {
@@ -79,7 +79,7 @@ module.exports = {
           },
           'img-loader',
         ]
-			},
+      },
     ]
   },
 
