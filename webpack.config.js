@@ -13,7 +13,7 @@ const HotModulePlugin = new webpack.HotModuleReplacementPlugin();
 
 module.exports = {
 
-  entry: './src/client/index.js',
+  entry: './src/index.js',
 
   output: {
     filename: 'bundle.js',
@@ -23,8 +23,8 @@ module.exports = {
 
   resolve: {
     alias: {
-      images: path.resolve(__dirname, 'static/images'),
-      vars: path.resolve(__dirname, 'src/scss/_vars'),
+      images: path.resolve(__dirname, 'src/assets/images'),
+      vars: path.resolve(__dirname, 'src/assets/styles/_vars'),
     },
     extensions: [
       '.js',
@@ -33,6 +33,7 @@ module.exports = {
   },
   //Настройки локального сервера
   devServer: {
+    historyApiFallback: true,
     contentBase: './build',
     hot: true
   },
@@ -47,7 +48,8 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: ['babel-loader', 'eslint-loader']
+        // use: ['babel-loader', 'eslint-loader']
+        use: ['babel-loader']
       },
       {
       	test: /\.scss$/,
