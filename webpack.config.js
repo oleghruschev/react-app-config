@@ -12,7 +12,7 @@ const MiniCssPlugin = new MiniCssExtractPlugin({
 const HotModulePlugin = new webpack.HotModuleReplacementPlugin();
 
 module.exports = {
-	
+
   entry: './src/client/index.js',
 
   output: {
@@ -20,7 +20,7 @@ module.exports = {
     path: path.resolve(__dirname, 'build'),
     publicPath: '/'
   },
-  
+
   resolve: {
     alias: {
       images: path.resolve(__dirname, 'static/images'),
@@ -43,6 +43,11 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ['babel-loader']
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: ['babel-loader', 'eslint-loader']
       },
       {
       	test: /\.scss$/,

@@ -1,12 +1,12 @@
 import React from 'react';
 
-import styles from './Header.scss';
+import styles from './Page1.scss';
 
-const Header = () => (
+const Page1 = () => (
   <div className={styles.block}>
     <div className={styles.img}/>
     <h1 className={styles.header}>Hello</h1>
-  </div>	
+  </div>
 )
 
-export default Header;
+export default Page1;
