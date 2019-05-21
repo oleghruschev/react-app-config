@@ -4,9 +4,7 @@
 - сборку js, jsx scss, img модулей с помощью webpack;
 - конфигурацию babel для транспиляции кода;
 - react-router;
-- css-modules;
-- конфигурацию eslint.
-
-#### Также будет добавлено:
 - библиотека redux;
 - redux-midleware.
+- css-modules;
+- конфигурацию eslint.
